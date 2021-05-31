@@ -1,0 +1,25 @@
+Данная программа подключена к моей базе данных week4
+
+[private static Connection getConnection() throws SQLException]- создания соединения с БД MySQL,
+возвращает connection(соединение), для того, чтобы в дальнейшем его использовать в моих функциях
+и получать данные с БД :
+tableProduct();- получение всех данных с таблицы Product
+addProduct(); - добаление данных в таблицу Product
+deleteProduct(); - удаление данных с талицы Product
+updateProduct(); - обновление имени продукта по ID
+
+
+
+при запуске данной программы, получаю :
+
+
+
+id	name	yearModel	brand	priceModel	color
+
+2	Galaxy S8+	2020	samsung	35590	black
+
+rows added 1
+rows deleted 1
+rows updated 1
+
+
