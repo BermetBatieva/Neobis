@@ -41,7 +41,8 @@ public class Main {
                 e.printStackTrace();
             } finally {
                 try {
-                    preparedStatement.close();
+                    if(preparedStatement != null)
+                        preparedStatement.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -68,7 +69,8 @@ public class Main {
                 e.printStackTrace();
             } finally {
                 try {
-                    preparedStatement.close();
+                    if(preparedStatement != null)
+                        preparedStatement.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -88,6 +90,7 @@ public class Main {
             PreparedStatement preparedStatement = null;
             try {
                 preparedStatement = connection.prepareStatement("UPDATE product SET name = ? WHERE id = ?");
+
                 preparedStatement.setString(1, name);
                 preparedStatement.setString(2, id);
                 int rows = preparedStatement.executeUpdate();
@@ -96,7 +99,8 @@ public class Main {
                 e.printStackTrace();
             } finally {
                 try {
-                    preparedStatement.close();
+                    if(preparedStatement != null)
+                        preparedStatement.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -116,12 +120,14 @@ public class Main {
         ResultSet resultSet = statement.executeQuery(query);
         if (resultSet != null) {
             try {
+
                 ResultSetMetaData metadata = resultSet.getMetaData();
                 int columnCount = metadata.getColumnCount();
                 for (int i = 1; i <= columnCount; i++) {
                     System.out.print(metadata.getColumnName(i) + "\t");
                 }
                 System.out.println("\n");
+
                 while (resultSet.next()) {
                     for (int i = 1; i <= columnCount; i++) {
                         System.out.print(resultSet.getString(i) + "\t");
@@ -133,7 +139,8 @@ public class Main {
                 e.printStackTrace();
             } finally {
                 try {
-                    resultSet.close();
+                    if(resultSet != null)
+                        resultSet.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
