@@ -43,11 +43,8 @@ public class Main {
                 try {
                     if(preparedStatement != null)
                         preparedStatement.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    connection.close();
+                    if(connection != null)
+                        connection.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -71,11 +68,8 @@ public class Main {
                 try {
                     if(preparedStatement != null)
                         preparedStatement.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    connection.close();
+                    if(connection != null)
+                        connection.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -101,11 +95,8 @@ public class Main {
                 try {
                     if(preparedStatement != null)
                         preparedStatement.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    connection.close();
+                    if(connection != null)
+                        connection.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -141,6 +132,8 @@ public class Main {
                 try {
                     if(resultSet != null)
                         resultSet.close();
+                    if(connection != null)
+                        connection.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
