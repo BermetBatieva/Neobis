@@ -41,9 +41,9 @@ public class Main {
                 e.printStackTrace();
             } finally {
                 try {
-                    if(preparedStatement != null)
+                    if (preparedStatement != null)
                         preparedStatement.close();
-                    if(connection != null)
+                    if (connection != null)
                         connection.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
@@ -66,9 +66,9 @@ public class Main {
                 e.printStackTrace();
             } finally {
                 try {
-                    if(preparedStatement != null)
+                    if (preparedStatement != null)
                         preparedStatement.close();
-                    if(connection != null)
+                    if (connection != null)
                         connection.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
@@ -93,9 +93,9 @@ public class Main {
                 e.printStackTrace();
             } finally {
                 try {
-                    if(preparedStatement != null)
+                    if (preparedStatement != null)
                         preparedStatement.close();
-                    if(connection != null)
+                    if (connection != null)
                         connection.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
@@ -111,14 +111,12 @@ public class Main {
         ResultSet resultSet = statement.executeQuery(query);
         if (resultSet != null) {
             try {
-
                 ResultSetMetaData metadata = resultSet.getMetaData();
                 int columnCount = metadata.getColumnCount();
                 for (int i = 1; i <= columnCount; i++) {
                     System.out.print(metadata.getColumnName(i) + "\t");
                 }
                 System.out.println("\n");
-
                 while (resultSet.next()) {
                     for (int i = 1; i <= columnCount; i++) {
                         System.out.print(resultSet.getString(i) + "\t");
@@ -130,10 +128,12 @@ public class Main {
                 e.printStackTrace();
             } finally {
                 try {
-                    if(resultSet != null)
+                    if (resultSet != null)
                         resultSet.close();
-                    if(connection != null)
-                        connection.close();
+                    if (statement != null)
+                        statement.close();
+                    if (connection != null) ;
+                    connection.close();
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -141,5 +141,7 @@ public class Main {
         }
     }
 }
+
+
 
 
