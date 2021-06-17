@@ -24,9 +24,8 @@ public class ProductService {
         return productRepository.findById(id);
     }
 
-    public String deleteById(Integer id) {
+    public void deleteById(Integer id) {
         productRepository.deleteById(id);
-        return id + " was successfully deleted!";
     }
 
     public Product createProduct(ProductModel model) {
@@ -44,8 +43,4 @@ public Product updateProductById(Integer id,ProductModel model) throws Exception
             }).orElseThrow( Exception::new);
 }
 
-
-
-
-
-    }
+}

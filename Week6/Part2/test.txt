@@ -1,0 +1,51 @@
+
+
+Get request that return all existing products:
+ @GetMapping(value="/all")
+ public List<Product> getAllProduct()
+
+ Path: GET   localhost:8080/product/all
+ Response: 200 OK
+ result:
+
+    {
+        "id": 1,
+        "name": "Albeni",
+        "price": 55.9
+    }
+-----------------------------------------------------------------------------------
+ Put request
+ change product by id:
+  @PutMapping("/{id}")
+     public Product putProduct(@PathVariable ("id") Integer id ,
+     @RequestBody ProductModel model)
+Path: PUT localhost:8080/product/1
+ name : Snikers,
+ price : 33
+ return : id, model
+ like that: 200 OK
+{
+    "id": 1,
+    "name": "Snikers",
+    "price": 33.0
+}
+-------------------------------------------------------------------------------------
+Post request
+add new product
+@PostMapping("/add")
+    public ProductModel addProduct(@RequestBody ProductModel product)
+
+Path: POST localhost:8080/product/add
+enter in body (raw,json)
+{
+    "name": "Albeni",
+    "price":55.9
+}
+return 200 OK
+and the product we added
+---------------------------------------------------------------------------------------
+Delete request
+delete product by id
+Path: DELETE   llocalhost:8080/product/2
+result:
+successfully deleted!
