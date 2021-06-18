@@ -38,7 +38,7 @@ public class PeopleController {
         return peopleService.updateById(id,peopleModel);
     }
     
-     @DeleteMapping("/{id}")
+    @DeleteMapping("/{id}")
     public String deletePeople(@PathVariable("id") Integer id){
         peopleService.deleteById(id);
         return  "successfully deleted!";
