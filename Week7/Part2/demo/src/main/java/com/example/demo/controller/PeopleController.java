@@ -37,7 +37,8 @@ public class PeopleController {
     public People updatePeople(@PathVariable("id") Integer id,@RequestBody PeopleModel peopleModel) throws  Exception{
         return peopleService.updateById(id,peopleModel);
     }
-
+    
+    @DeleteMapping("/{id}")
     public String deletePeople(@PathVariable("id") Integer id){
         peopleService.deleteById(id);
         return  "successfully deleted!";
